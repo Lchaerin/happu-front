@@ -15,6 +15,9 @@ import cr from '../image/craft.png'
 import un from '../image/unique.png'
 import cat0 from '../image/cate0.png'
 import cat1 from '../image/cate1.png'
+import TuneIcon from '@mui/icons-material/Tune';
+import * as React from "react";
+import SimpleDialog from '../components/recomendation'
 
 const OPTIONS = { loop: true }
 const SLIDE_COUNT = 5
@@ -22,9 +25,21 @@ const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
 export default function Category() {
     const [cookie, setCookie] = useCookies(['id']);
+    const [open, setOpen] = React.useState(false);
+    
+  
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+  
+    const handleClose = (value) => {
+      setOpen(false);
+    };
+
   return (
     <div>
-      <div style = {{paddingTop: "9px", paddingBottom: "9px"}}><a className = "categoryName"> 모아보기 </a></div>
+      <div style = {{height:"48px",display: "flex",flexWrap: "wrap", alignItems:"center"}}><a className = "categoryName"> 모아보기 </a>
+      <div style={{position:"absolute", top:"12px", right:"20px"}} onClick={handleClickOpen}><TuneIcon/></div></div>
       
       <div style = {{borderStyle: "solid", color: "#CFCFCF", borderWidth: "1px"}}></div>
 
@@ -245,7 +260,10 @@ export default function Category() {
         </div>
       </div>
 
-      <div>
+      <div><SimpleDialog
+          open={open}
+          onClose={handleClose}
+        />
         <FixedBottomNavigation />
       </div>
     </div>

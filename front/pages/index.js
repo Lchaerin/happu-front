@@ -10,6 +10,7 @@ export default function Home() {
   React.useEffect(function () {
     console.log(cookies.id)
     console.log(cookies.pw)
+    if(cookies.id!=undefined&&cookies.pw!=undefined){
     fetch("http://localhost:8080/login/signin", {
       method: "POST",
       headers: {
@@ -25,12 +26,15 @@ export default function Home() {
         const data = await res.json();
         location.href = "./home";
       }
-      })
-      .catch((err) => {
-        console.log(err.message);
+      else{
         alert("로그인이 필요합니다");
         location.href = "./signin";
-      });
+      }
+      });}
+      else{
+        alert("로그인이 필요합니다");
+        location.href = "./signin";
+      }
   }, []);
 
 

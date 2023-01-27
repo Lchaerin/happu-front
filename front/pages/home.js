@@ -8,13 +8,27 @@ import Router, { useRouter } from "next/router";
 import h0 from '../image/home0.png'
 import h1 from '../image/home1.png'
 import h2 from '../image/home2.png'
-
+import TuneIcon from '@mui/icons-material/Tune';
+import * as React from "react";
+import SimpleDialog from '../components/recomendation'
 
 export default function Home() {
     const [cookie, setCookie] = useCookies(['id']);
+    const [open, setOpen] = React.useState(false);
+    
+  
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+  
+    const handleClose = (value) => {
+      setOpen(false);
+    };
+
   return (
     <div>
-      <div style = {{paddingTop: "9px", paddingBottom: "9px"}}><a className = "categoryName"> ??서비스 로고?? </a></div>
+      <div style = {{height:"48px",display: "flex",flexWrap: "wrap", alignItems:"center"}}><a className = "categoryName"> Home </a>
+      <div style={{position:"absolute", top:"12px", right:"20px"}} onClick={handleClickOpen}><TuneIcon/></div></div>
 
       <div style = {{borderStyle: "solid", color: "#CFCFCF", borderWidth: "1px"}}></div>
 
@@ -50,7 +64,12 @@ export default function Home() {
       </div>
 
       <div>
+      <SimpleDialog
+          open={open}
+          onClose={handleClose}
+        />
         <FixedBottomNavigation/>
+        
       </div>
     </div>
   )

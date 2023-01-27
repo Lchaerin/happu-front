@@ -23,8 +23,6 @@ SimpleDialog.propTypes = {
 
   export default function SimpleDialog(props) {
     const [cookies, setCookies] = useCookies(['id']);
-    let [likes, setLikes] = React.useState("")
-    let [cautions, setCautions] = ([""])
     const[learning,setLearning]=React.useState(0);
     const[travel,setTravel]=React.useState(0);
     const[art,setArt]=React.useState(0);
@@ -40,6 +38,7 @@ SimpleDialog.propTypes = {
     const [chan, setChan] = React.useState(false);
   const { onClose, selectedValue, open } = props;
   const [open2, setOpen2] = React.useState(false);
+  const [open3, setOpen3] = React.useState(false);
   const handleClose = () => {
     onClose(selectedValue);
   };
@@ -49,8 +48,9 @@ SimpleDialog.propTypes = {
   const toggleDrawer = (newOpen) => () => {
     setOpen2(newOpen);
   };
-  let slots1=[]
-  let slots2=[]
+  const toggleDrawer2 = (newOpen) => () => {
+    setOpen3(newOpen);
+  };
   React.useEffect(function () {
     fetch("http://localhost:8080/activity/preference", {
                 method: "POST",
@@ -202,7 +202,164 @@ SimpleDialog.propTypes = {
         >맛있는 음식 먹기
         </div>
             </div>
-            <div className='next'>다음</div>
+            <div className='next' onClick={toggleDrawer2(true)}>다음</div>
+            </div>
+        </div>
+      </SwipeableDrawer>
+      <SwipeableDrawer
+        anchor="bottom"
+        open={open3}
+        onClose={toggleDrawer2(false)}
+        onOpen={toggleDrawer2(true)}
+        swipeAreaWidth={drawerBleeding}
+        disableSwipeToOpen={false}
+        ModalProps={{
+          keepMounted: true,
+        }}
+      >
+        <div className='boarding'>
+            <div style={{paddingTop:"40px"}}>
+            <div className='graynum'>
+                2/2
+            </div>
+            <div className='plzslect'>{cookies.name}님,<br/><b style={{color:"#FF31DE"}}>해당사항</b>을 골라주세요</div>
+            <div className='bubblelist'>
+            <div
+        key="5"
+        onClick={
+        function(){
+            fetch("http://localhost:8080/alter/changing", {
+                method: "POST",
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({id:cookies.id, column : "walk" }),
+              }).then(async (res) => {
+                const data = await res.json()
+                setWalk(data["walk"])
+                setChan(!chan)
+              })
+
+            walk?setWalk(0):setWalk(1)
+        }}
+        className={'likebox-'+(walk?"yes":"no")}
+        >
+            걷기 힘들어요
+        </div>
+        <div
+        key="6"
+        onClick={
+            function(){
+                fetch("http://localhost:8080/alter/changing", {
+                    method: "POST",
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({id:cookies.id, column : "chronic" }),
+                  }).then(async (res) => {
+                    const data = await res.json()
+                    setChronic(data["chronic"])
+                    setChan(!chan)
+                  })
+    
+                chronic?setChronic(0):setChronic(1)
+            }}
+        className={'likebox-'+(chronic?"yes":"no")}
+        >만성질환이 있어요
+        </div>
+        <div
+        key="7"
+        onClick={
+            function(){
+                fetch("http://localhost:8080/alter/changing", {
+                    method: "POST",
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({id:cookies.id, column : "diet" }),
+                  }).then(async (res) => {
+                    const data = await res.json()
+                    setDiet(data["diet"])
+                    setChan(!chan)
+                  })
+    
+                diet?setDiet(0):setDiet(1)
+            }}
+        className={'likebox-'+(diet?"yes":"no")}
+        >식이조절이 필요해요
+        </div>
+        <div
+        key="8"
+        onClick={
+            function(){
+                fetch("http://localhost:8080/alter/changing", {
+                    method: "POST",
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({id:cookies.id, column : "breathe" }),
+                  }).then(async (res) => {
+                    const data = await res.json()
+                    setBreathe(data["breathe"])
+                    setChan(!chan)
+                  })
+    
+                breathe?setBreathe(0):setBreathe(1)
+            }}
+        className={'likebox-'+(breathe?"yes":"no")}
+        >숨이 금방 차요
+        </div>
+        <div
+        key="9"
+        onClick={
+            function(){
+                fetch("http://localhost:8080/alter/changing", {
+                    method: "POST",
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({id:cookies.id, column : "surprised" }),
+                  }).then(async (res) => {
+                    const data = await res.json()
+                    setSurprised(data["surprised"])
+                    setChan(!chan)
+                  })
+    
+                surprised?setSurprised(0):setSurprised(1)
+            }}
+        className={'likebox-'+(surprised?"yes":"no")}
+        >놀라면 안돼요
+        </div>
+        <div
+        key="10"
+        onClick={
+            function(){
+                fetch("http://localhost:8080/alter/changing", {
+                    method: "POST",
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({id:cookies.id, column : "people" }),
+                  }).then(async (res) => {
+                    const data = await res.json()
+                    setPeople(data["people"])
+                    setChan(!chan)
+                  })
+    
+                people?setPeople(0):setPeople(1)
+            }}
+        className={'likebox-'+(people?"yes":"no")}
+        >새로운 사람과의 만남은 부담스러워요
+        </div>
+            </div>
+            <div className='pre_next'>
+            <div className='pre' onClick={toggleDrawer2(false)}>이전</div>
+            <div style={{width:"10px"}}></div>
+            <div className='next2' onClick={()=>{
+                setOpen2(false)
+                setOpen3(false)
+            }}>확인</div>
+            </div>
             </div>
         </div>
       </SwipeableDrawer>

@@ -248,3 +248,54 @@
 
     color: #FFFFFF;
   }
+  .next2{
+    width: 220px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000000;
+    /* DropShadow/CardAndButton */
+    border-radius: 4px;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+
+    text-align: center;
+
+    color: #FFFFFF;
+  }
+  .pre{
+    width: 90px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    /* DropShadow/CardAndButton */
+    border: 1px solid #000000;
+    border-radius: 4px;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+
+    text-align: center;
+
+    color: black;
+  }
+
+  .pre_next{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 16px;
+    left: 0;
+    width: 100vw;
+  }

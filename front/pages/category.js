@@ -264,7 +264,7 @@ export default function Category() {
           open={open}
           onClose={handleClose}
         />
-        <FixedBottomNavigation />
+        <FixedBottomNavigation v='sum'/>
       </div>
     </div>
   )

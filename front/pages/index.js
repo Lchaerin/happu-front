@@ -5,30 +5,31 @@ import * as React from "react";
 import { CookiesProvider,useCookies } from 'react-cookie';
 
 export default function Home() {
-  const [c_loginID, setC_loginID] = useCookies(['id']);
+  const [cookies, setCookies] = useCookies(['id']);
 
   React.useEffect(function () {
-    console.log(c_loginID.id)
-    console.log(c_loginID.pw)
+    console.log(cookies.id)
+    console.log(cookies.pw)
     fetch("http://localhost:8080/login/signin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        studentId: c_loginID.id,
-        password: c_loginID.pw,
+        id: cookies.id,
+        pw: cookies.pw,
       }),
     })
       .then(async (res) => {
-        
+        if(res!=undefined){
         const data = await res.json();
-        console.log(data.name)
         location.href = "./home";
+      }
       })
       .catch((err) => {
         console.log(err.message);
-        alert("로그인 정보가 일치하지 않습니다!");
+        alert("로그인이 필요합니다");
+        location.href = "./signin";
       });
   }, []);
 

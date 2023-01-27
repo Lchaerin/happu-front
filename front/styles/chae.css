@@ -1,0 +1,44 @@
+.foot {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 5rem;
+    background-color: white;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    padding-top: 15px;
+  }
+  .head {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 48px;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+  }
+
+  .kakao {
+    background-color: #FBE44D;
+    border-radius: 5px;
+    bottom: 0;
+    display: flex;
+    height: 48px;
+    width: 92px;
+    color: #3B1F1E;
+    justify-content: center;
+    align-items: center;
+  }
+  .reserve{
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    width: 218px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

@@ -10,10 +10,40 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Container } from "@mui/material";
-
+import { useCookies } from 'react-cookie'
 const theme = createTheme();
 
 export default function SignInSide() {
+
+    const [cookies, setCookie, removeCookie] = useCookies(['id'])
+    const handleCookie = (id, pw,name) => {
+        const expireDate = new Date()
+        expireDate.setMinutes(expireDate.getMinutes() + 10)
+        setCookie(
+          'id',
+          id,
+          {
+            path: '/',
+            expires: expireDate,
+          }
+        )
+        setCookie(
+            'pw',
+            pw,
+            {
+              path: '/',
+              expires: expireDate,
+            }
+          )
+          setCookie(
+            'name',
+            name,
+            {
+              path: '/',
+              expires: expireDate,
+            }
+          )
+      }
 
 const handleSubmit = (event) => {
     event.preventDefault();
@@ -22,6 +52,26 @@ const handleSubmit = (event) => {
       email: data.get('email'),
       password: data.get('password'),
     });
+    fetch("http://localhost:8080/login/signin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id: data.get('email'),
+          password: data.get('password'),
+        }),
+      })
+        .then(async (res) => {
+          const data2 = await res.json();
+          console.log(data2)
+          handleCookie(data2.login_id, data2.login_pw, data2.name)
+          location.href = "./home";
+        })
+        .catch((err) => {
+          console.log(err.message);
+          alert("로그인 정보가 일치하지 않습니다!");
+        });
   };
   return (
     <ThemeProvider theme={theme}>

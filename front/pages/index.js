@@ -1,24 +1,27 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import { CookiesProvider } from 'react-cookie';
+import * as React from "react";
+import { CookiesProvider,useCookies } from 'react-cookie';
 
 export default function Home() {
-  const [c_loginID, setC_loginID] = useCookies(['login_id']);
-  const [c_loginPW, setC_loginPW] = useCookies(['login_pw']);
+  const [c_loginID, setC_loginID] = useCookies(['id']);
 
   React.useEffect(function () {
-    fetch("백엔드서버/checkuser", {
+    console.log(c_loginID.id)
+    console.log(c_loginID.pw)
+    fetch("http://localhost:8080/login/signin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        studentId: c_loginID,
-        password: c_loginPW,
+        studentId: c_loginID.id,
+        password: c_loginID.pw,
       }),
     })
       .then(async (res) => {
+        
         const data = await res.json();
         console.log(data.name)
         location.href = "./home";
@@ -30,12 +33,6 @@ export default function Home() {
   }, []);
 
 
-React.useEffect(function () {
-    console.log({
-      id: c_loginID,
-      password: c_loginPW,
-    });
-  }, []);
 
   return (
     <div className={styles.container}>

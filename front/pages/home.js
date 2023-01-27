@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import { CookiesProvider,useCookies } from 'react-cookie'
 import Link from 'next/link'
 import FixedBottomNavigation from './bottomNavFixed'
+import Router, { useRouter } from "next/router";
 import h0 from '../image/home0.png'
 import h1 from '../image/home1.png'
 import h2 from '../image/home2.png'
@@ -17,34 +18,35 @@ export default function Home() {
 
       <div style = {{borderStyle: "solid", color: "#CFCFCF", borderWidth: "1px"}}></div>
 
-      <div style = {{
-        width: "364px",
-        marginTop: "15px",
-        marginLeft: "24px",
-        margitnRight: "24px",
-        borderRadius: "1.5rem",
-        overflow: "hidden"}}>
-          <Image width = "364px" src = {h0} />
-      </div>
+      <div style ={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column"
+      }}>
+        <div style = {{
+          marginTop: "15px",
+          borderRadius: "1.5rem",
+          overflow: "hidden"
+          }} onClick={() => Router.push("/demoEnd")} >
+            <Image width = "50vw" height = "50vh" src = {h0} />
+        </div>
 
-      <div style = {{
-        width: "364px",
-        marginTop: "15px",
-        marginLeft: "24px",
-        margitnRight: "24px",
-        borderRadius: "1.5rem",
-        overflow: "hidden"}}>
-          <Image width = "364px" src = {h1} />
-      </div>
+        <div style = {{
+          marginTop: "15px",
+          borderRadius: "1.5rem",
+          overflow: "hidden"
+          }} onClick={() => Router.push("/demoEnd")} >
+            <Image width = "50vw" height = "50vh" src = {h1} />
+        </div>
 
-      <div style = {{
-        width: "364px",
-        marginTop: "15px",
-        marginLeft: "24px",
-        margitnRight: "24px",
-        borderRadius: "1.5rem",
-        overflow: "hidden"}}>
-          <Image width = "364px" src = {h2} />
+        <div style = {{
+          marginTop: "15px",
+          borderRadius: "1.5rem",
+          overflow: "hidden"
+          }} onClick={() => Router.push("/demoEnd")} >
+            <Image width = "50vw" height = "50vh" src = {h2} />
+        </div>
       </div>
 
       <div>

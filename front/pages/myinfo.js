@@ -2,8 +2,12 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { CookiesProvider,useCookies } from 'react-cookie'
 import FixedBottomNavigation from './bottomNavFixed'
+import Router, { useRouter } from "next/router";
 import myP from '../image/myPhoto.png'
-import ic from '../image/myIc.png'
+import he from '../image/heart.png'
+import co from '../image/coupon.png'
+import bu from '../image/buy.png'
+import re from '../image/review.png'
 import arw from '../image/myinfoArrow.png'
 
 export default function Home() {
@@ -41,19 +45,19 @@ export default function Home() {
                     height: "80px",
                     padding: "7px",
                     marginBottom: "10px",
-                    backgroundColor: "rgba(245, 245, 245, 1)",
+                    backgroundColor: "rgba(255, 255, 255, 1)",
                     border: "none",
                     display: "flex",
                     flexWrap: "wrap",
                     justifyContent: "center",
                     aligntContent: "center",
                     fontFamily: "Pretendard",
-                    fontSize: "15px",
+                    fontSize: "16px",
                     fontWeight: "600",
                     borderRadius: "0.5rem"
-                }}>
+                }} onClick={() => Router.push("/demoEnd")} >
                     <Image
-                        src = {ic}
+                        src = {he}
                         width = "120"
                         height = "35"
                         marginBottom = "5px"/> &nbsp;&nbsp;&nbsp;&nbsp;찜&nbsp;&nbsp;&nbsp;&nbsp;
@@ -64,19 +68,19 @@ export default function Home() {
                     height: "80px",
                     padding: "7px",
                     marginBottom: "10px",
-                    backgroundColor: "rgba(245, 245, 245, 1)",
+                    backgroundColor: "rgba(255, 255, 255, 1)",
                     border: "none",
                     display: "flex",
                     flexWrap: "wrap",
                     justifyContent: "center",
                     aligntContent: "center",
                     fontFamily: "Pretendard",
-                    fontSize: "15px",
+                    fontSize: "16px",
                     fontWeight: "600",
                     borderRadius: "0.5rem"
-                }}>
+                }} onClick={() => Router.push("/demoEnd")} >
                     <Image
-                        src = {ic}
+                        src = {bu}
                         width = "120"
                         height = "35"
                         marginBottom = "5px"/> 결제내역
@@ -87,19 +91,19 @@ export default function Home() {
                     height: "80px",
                     padding: "7px",
                     marginBottom: "10px",
-                    backgroundColor: "rgba(245, 245, 245, 1)",
+                    backgroundColor: "rgba(255, 255, 255, 1)",
                     border: "none",
                     display: "flex",
                     flexWrap: "wrap",
                     justifyContent: "center",
                     aligntContent: "center",
                     fontFamily: "Pretendard",
-                    fontSize: "15px",
+                    fontSize: "16px",
                     fontWeight: "600",
                     borderRadius: "0.5rem"
-                }}>
+                }} onClick={() => Router.push("/demoEnd")} >
                     <Image
-                        src = {ic}
+                        src = {co}
                         width = "120"
                         height = "35"
                         marginBottom = "5px"/> 쿠폰함
@@ -110,19 +114,19 @@ export default function Home() {
                     height: "80px",
                     padding: "7px",
                     marginBottom: "10px",
-                    backgroundColor: "rgba(245, 245, 245, 1)",
+                    backgroundColor: "rgba(255, 255, 255, 1)",
                     border: "none",
                     display: "flex",
                     flexWrap: "wrap",
                     justifyContent: "center",
                     aligntContent: "center",
                     fontFamily: "Pretendard",
-                    fontSize: "15px",
+                    fontSize: "16px",
                     fontWeight: "600",
                     borderRadius: "0.5rem"
-                }}>
+                }} onClick={() => Router.push("/demoEnd")} >
                     <Image
-                        src = {ic}
+                        src = {re}
                         width = "120"
                         height = "35"
                         marginBottom = "5px"/> 내가 쓴 리뷰

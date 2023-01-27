@@ -18,7 +18,7 @@ export default function SignInSide() {
     const [cookies, setCookie, removeCookie] = useCookies(['id'])
     const handleCookie = (id, pw,name) => {
         const expireDate = new Date()
-        expireDate.setMinutes(expireDate.getHours() + 2)
+        expireDate.setMinutes(expireDate.getMinutes() + 180)
         setCookie(
           'id',
           id,

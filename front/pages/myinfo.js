@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { CookiesProvider,useCookies } from 'react-cookie'
 import FixedBottomNavigation from './bottomNavFixed'
 import Router, { useRouter } from "next/router";
+import React, { useState, useEffect } from "react";
 import myP from '../image/myPhoto.png'
 import he from '../image/heart.png'
 import co from '../image/coupon.png'
@@ -12,6 +13,7 @@ import arw from '../image/myinfoArrow.png'
 
 export default function Home() {
     const [cookie, setCookie] = useCookies(['id']);
+
     return (
         <div>
             <div style = {{paddingTop: "9px", paddingBottom: "9px"}}><a className = "categoryName"> 내 정보 </a></div>
@@ -34,7 +36,7 @@ export default function Home() {
                         <span style = {{
                             fontFamily: 'Pretendard',
                             fontWeight: "800"
-                        }}> {cookie.user}</span>
+                        }}> {cookie.name}</span>
                         <span style = {{ fontFamily: 'Pretendard', fontWeight: "thin"}}>님 </span>
                     </a>
             </div>
@@ -153,7 +155,7 @@ export default function Home() {
             </div>
 
             <div>
-                <FixedBottomNavigation/>
+                <FixedBottomNavigation v="myInfo"/>
             </div>
         </div>
     )

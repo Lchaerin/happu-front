@@ -246,7 +246,7 @@ export default function Category() {
       </div>
 
       <div>
-        <FixedBottomNavigation />
+        <FixedBottomNavigation v='sum'/>
       </div>
     </div>
   )

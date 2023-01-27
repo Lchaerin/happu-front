@@ -4,7 +4,15 @@ import { CookiesProvider,useCookies } from 'react-cookie'
 import Link from 'next/link'
 import FixedBottomNavigation from './bottomNavFixed'
 import EmblaCarousel from '../components/sumCarousel'
-import ic from '../image/ic.png'
+import Router, { useRouter } from "next/router";
+import tr from '../image/travel.png'
+import re from '../image/reports.png'
+import ex from '../image/exhibit.png'
+import sp from '../image/spa.png'
+import he from '../image/health.png'
+import ed from '../image/edu.png'
+import cr from '../image/craft.png'
+import un from '../image/unique.png'
 import cat0 from '../image/cate0.png'
 import cat1 from '../image/cate1.png'
 
@@ -32,7 +40,7 @@ export default function Category() {
           height: "80px",
           padding: "7px",
           marginBottom: "10px",
-          backgroundColor: "rgba(245, 245, 245, 1)",
+          backgroundColor: "rgba(255, 255, 255, 1)",
           border: "none",
           display: "flex",
           flexWrap: "wrap",
@@ -42,9 +50,9 @@ export default function Category() {
           fontSize: "15px",
           fontWeight: "500",
           borderRadius: "1rem"
-          }}>
+          }} onClick={() => Router.push("/travel")}>
           <Image
-            src = {ic}
+            src = {tr}
             width = "50"
             height = "35"
             marginBottom = "5px"/> 여행
@@ -55,7 +63,7 @@ export default function Category() {
           height: "80px",
           padding: "7px",
           marginBottom: "10px",
-          backgroundColor: "rgba(245, 245, 245, 1)",
+          backgroundColor: "rgba(255, 255, 255, 1)",
           border: "none",
           display: "flex",
           flexWrap: "wrap",
@@ -65,9 +73,9 @@ export default function Category() {
           fontSize: "15px",
           fontWeight: "500",
           borderRadius: "1rem"
-          }}>
+          }} onClick={() => Router.push("/reports")}>
           <Image
-            src = {ic}
+            src = {re}
             width = "50"
             height = "35"
             marginBottom = "5px"/> 레포츠
@@ -78,7 +86,7 @@ export default function Category() {
           height: "80px",
           padding: "7px",
           marginBottom: "10px",
-          backgroundColor: "rgba(245, 245, 245, 1)",
+          backgroundColor: "rgba(255, 255, 255, 1)",
           border: "none",
           display: "flex",
           flexWrap: "wrap",
@@ -88,9 +96,9 @@ export default function Category() {
           fontSize: "15px",
           fontWeight: "500",
           borderRadius: "1rem"
-          }}>
+          }} onClick={() => Router.push("/demoCate")}>
           <Image
-            src = {ic}
+            src = {ex}
             width = "50"
             height = "35"
             marginBottom = "5px"/> 전시
@@ -101,7 +109,7 @@ export default function Category() {
           height: "80px",
           padding: "7px",
           marginBottom: "10px",
-          backgroundColor: "rgba(245, 245, 245, 1)",
+          backgroundColor: "rgba(255, 255, 255, 1)",
           border: "none",
           display: "flex",
           flexWrap: "wrap",
@@ -111,9 +119,9 @@ export default function Category() {
           fontSize: "15px",
           fontWeight: "500",
           borderRadius: "1rem"
-          }}>
+          }} onClick={() => Router.push("/demoCate")}>
           <Image
-            src = {ic}
+            src = {sp}
             width = "50"
             height = "35"
             marginBottom = "5px"/> 스파
@@ -124,7 +132,7 @@ export default function Category() {
           height: "80px",
           padding: "7px",
           marginBottom: "10px",
-          backgroundColor: "rgba(245, 245, 245, 1)",
+          backgroundColor: "rgba(255, 255, 255, 1)",
           border: "none",
           display: "flex",
           flexWrap: "wrap",
@@ -134,9 +142,9 @@ export default function Category() {
           fontSize: "15px",
           fontWeight: "500",
           borderRadius: "1rem"
-          }}>
+          }} onClick={() => Router.push("/demoCate")}>
           <Image
-            src = {ic}
+            src = {he}
             width = "50"
             height = "35"
             marginBottom = "5px"/> 건강
@@ -147,7 +155,7 @@ export default function Category() {
           height: "80px",
           padding: "7px",
           marginBottom: "10px",
-          backgroundColor: "rgba(245, 245, 245, 1)",
+          backgroundColor: "rgba(255, 255, 255, 1)",
           border: "none",
           display: "flex",
           flexWrap: "wrap",
@@ -157,9 +165,9 @@ export default function Category() {
           fontSize: "15px",
           fontWeight: "500",
           borderRadius: "1rem"
-          }}>
+          }} onClick={() => Router.push("/demoCate")}>
           <Image
-            src = {ic}
+            src = {ed}
             width = "50"
             height = "35"
             marginBottom = "5px"/> 교육
@@ -170,7 +178,7 @@ export default function Category() {
           height: "80px",
           padding: "7px",
           marginBottom: "10px",
-          backgroundColor: "rgba(245, 245, 245, 1)",
+          backgroundColor: "rgba(255, 255, 255, 1)",
           border: "none",
           display: "flex",
           flexWrap: "wrap",
@@ -180,9 +188,9 @@ export default function Category() {
           fontSize: "15px",
           fontWeight: "500",
           borderRadius: "1rem"
-          }}>
+          }} onClick={() => Router.push("/demoCate")}>
           <Image
-            src = {ic}
+            src = {cr}
             width = "50"
             height = "35"
             marginBottom = "5px"/> 공예
@@ -193,7 +201,7 @@ export default function Category() {
           height: "80px",
           padding: "7px",
           marginBottom: "10px",
-          backgroundColor: "rgba(245, 245, 245, 1)",
+          backgroundColor: "rgba(255, 255, 255, 1)",
           border: "none",
           display: "flex",
           flexWrap: "wrap",
@@ -203,9 +211,9 @@ export default function Category() {
           fontSize: "15px",
           fontWeight: "500",
           borderRadius: "1rem"
-          }}>
+          }} onClick={() => Router.push("/demoCate")}>
           <Image
-            src = {ic}
+            src = {un}
             width = "50"
             height = "35"
             marginBottom = "5px"/> 이색체험

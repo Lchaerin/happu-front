@@ -8,13 +8,27 @@ import Router, { useRouter } from "next/router";
 import h0 from '../image/home0.png'
 import h1 from '../image/home1.png'
 import h2 from '../image/home2.png'
-
+import * as React from "react";
+import SimpleDialog from '../components/recomendation'
+import TuneIcon from '@mui/icons-material/Tune';
 
 export default function Home() {
     const [cookie, setCookie] = useCookies(['id']);
+    const [open, setOpen] = React.useState(false);
+    
+  
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+  
+    const handleClose = (value) => {
+      setOpen(false);
+    };
+
   return (
     <div>
-      <div style = {{paddingTop: "9px", paddingBottom: "9px"}}><a className = "categoryName"> ??서비스 로고?? </a></div>
+      <div style = {{height:"48px",display: "flex",flexWrap: "wrap", alignItems:"center"}}><a className = "categoryName"> Home </a>
+      <div style={{position:"absolute", top:"12px", right:"20px"}} onClick={handleClickOpen}><TuneIcon/></div></div>
 
       <div style = {{borderStyle: "solid", color: "#CFCFCF", borderWidth: "1px"}}></div>
 
@@ -28,7 +42,7 @@ export default function Home() {
           marginTop: "15px",
           borderRadius: "1.5rem",
           overflow: "hidden"
-          }} onClick={() => Router.push("/demoEnd")} >
+          }} onClick={() => Router.push("/okinawa")} >
             <Image width = "50vw" height = "50vh" src = {h0} />
         </div>
 
@@ -50,7 +64,16 @@ export default function Home() {
       </div>
 
       <div>
+<<<<<<< HEAD
+      <SimpleDialog
+          open={open}
+          onClose={handleClose}
+        />
+        <FixedBottomNavigation/>
+        
+=======
         <FixedBottomNavigation v="home"/>
+>>>>>>> 65c816f83cdf2191e1d8a872b839dfb8bf1dba2f
       </div>
     </div>
   )

@@ -13,7 +13,7 @@ import Skeleton from '@mui/material/Skeleton';
 import Typography from '@mui/material/Typography';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import { CookiesProvider,useCookies } from 'react-cookie';
-const drawerBleeding = 56;
+const drawerBleeding = 0;
 
 SimpleDialog.propTypes = {
     onClose: PropTypes.func.isRequired,

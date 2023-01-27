@@ -21,7 +21,7 @@ export default function Home() {
     <div>
     <div className='head2'></div>
     <div className='head'>
-        <div style={{position:"fixed",left:"20px"}}><ArrowBackIcon/></div>
+        <div style={{position:"fixed",left:"20px"}} onClick={()=>{location.href="./home"}}><ArrowBackIcon/></div>
         <div style={{position:"fixed",right:"20px",display: "flex", flexWrap: "wrap"}}>
         <div onClick={handleLikes}>{value?<FavoriteIcon/>:<FavoriteBorderIcon/>}</div>
         <div style={{width:"15px"}}></div>
@@ -39,6 +39,7 @@ export default function Home() {
         <div className='travel-description'>일본인들의 워너비 국내여행지 1순위 일본 속의 또다른 남쪽 섬 (12~2월 평균기온 16~20도)</div>
       </div>
       <div className='line'></div>
+      
       <div className='foot2'>
     </div>
     <div className='foot'>

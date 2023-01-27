@@ -21,10 +21,27 @@ export default function SignUp() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    fetch("http://localhost:8080/login/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id: data.get('email'),
+          password: data.get('password'),
+          name: data.get('firstName'),
+        }),
+      })
+        .then(async (res) => {
+          const data2 = await res.json();
+          console.log(data2)
+          
+          location.href = "./home";
+        })
+        .catch((err) => {
+          console.log(err.message);
+          alert("로그인 정보가 일치하지 않습니다!");
+        });
   };
 
   return (

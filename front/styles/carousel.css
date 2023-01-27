@@ -1,7 +1,7 @@
 .embla {
   --slide-spacing: 1rem;
   --slide-size: 100%;
-  --slide-height: 19rem;
+  --slide-height: 23rem;
   padding: 1.6rem;
 }
 
@@ -28,6 +28,7 @@
   height: var(--slide-height);
   width: 100%;
   object-fit: cover;
+  border-radius: 1rem;
 }
 
 .embla__slide__number {

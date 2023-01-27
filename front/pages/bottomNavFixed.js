@@ -43,7 +43,7 @@ export default function FixedBottomNavigation() {
           }}
         >
           <BottomNavigationAction label="홈" icon={<HomeIcon />} href = './home'/>
-          <BottomNavigationAction label="모아보기" icon={<GridViewIcon />} />
+          <BottomNavigationAction label="모아보기" icon={<GridViewIcon />} href = './category'/>
           <BottomNavigationAction label="내 정보" icon={<PermIdentityIcon />} />
         </BottomNavigation>
       </Paper>

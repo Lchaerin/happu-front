@@ -223,12 +223,30 @@ export default function Category() {
       <div style = {{borderStyle: "solid", color: "#EBEBEB", borderWidth: "7px", marginTop: "5px"}}></div>
 
       <div style = {{paddingTop: "9px", paddingBottom: "9px", marginTop: "5px"}}><a className = "categoryName"> 요즘 뜨는 </a></div>
+      
+      <div style ={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column"
+      }} onClick={() => Router.push("/demoEnd")}>
+        <div style = {{
+          marginBottom: "10px",
+          borderRadius: "1.5rem",
+          overflow: "hidden"}} href = '/demoEnd'>
+            <Image width = "100vw" height = "40vh" src = {cat0} />
+          </div>
 
-      <div style = {{width: "364px", marginLeft: "24px", marginRight: "24px", marginBottom: "10px", borderRadius: "1.5rem", overflow: "hidden"}}><Image width = "364" src = {cat0} /></div>
-      <div style = {{width: "364px", marginLeft: "24px", marginRight: "24px", borderRadius: "1.5rem", overflow: "hidden"}}><Image width = "364" src = {cat1} /></div>
+        <div style = {{
+          borderRadius: "1.5rem",
+          overflow: "hidden"
+          }} onClick={() => Router.push("/demoEnd")}>
+            <Image width = "100vw" height = "40vh" src = {cat1} />
+        </div>
+      </div>
 
       <div>
-        <FixedBottomNavigation/>
+        <FixedBottomNavigation />
       </div>
     </div>
   )

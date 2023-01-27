@@ -8,9 +8,9 @@ import Router, { useRouter } from "next/router";
 import h0 from '../image/home0.png'
 import h1 from '../image/home1.png'
 import h2 from '../image/home2.png'
-import TuneIcon from '@mui/icons-material/Tune';
 import * as React from "react";
 import SimpleDialog from '../components/recomendation'
+import TuneIcon from '@mui/icons-material/Tune';
 
 export default function Home() {
     const [cookie, setCookie] = useCookies(['id']);
@@ -42,7 +42,7 @@ export default function Home() {
           marginTop: "15px",
           borderRadius: "1.5rem",
           overflow: "hidden"
-          }} onClick={() => Router.push("/demoEnd")} >
+          }} onClick={() => Router.push("/okinawa")} >
             <Image width = "50vw" height = "50vh" src = {h0} />
         </div>
 

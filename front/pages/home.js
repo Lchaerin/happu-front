@@ -50,7 +50,7 @@ export default function Home() {
       </div>
 
       <div>
-        <FixedBottomNavigation/>
+        <FixedBottomNavigation v="home"/>
       </div>
     </div>
   )

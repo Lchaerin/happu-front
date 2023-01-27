@@ -60,6 +60,54 @@
     padding-top: 15px;
     margin-bottom: 15px;
   }
+  .wouldDialog{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .wouldyou{
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-size: 24px;
+    line-height: 120%;
+    width: 75vw;
+    margin-top: 30px;
+  }
+
+  .wouldno{
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 75vw;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    text-decoration-line: underline;
+    color: #000000;
+  }
+  .wouldyes {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 75vw;
+    height: 48px;
+    background-color: black;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+  }
+
   .head {
     display: flex;
     flex-wrap: wrap;
@@ -107,4 +155,96 @@
     align-items: center;
     font-family: 'Pretendard';
     font-style: normal;
+  }
+
+  .boarding{
+    height:90vh;
+    width:100vw;
+    position: relative;
+    padding: 10px;
+    padding-left: 40px;
+  }
+
+  .graynum{
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    color: #9F9F9F;
+  }
+
+  .plzslect{
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .likebox-yes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    gap: 4px;
+    height: 44px;
+    background: #09B87E;
+    border: 1px solid #09B87E;
+    color: white;
+    border-radius: 100px;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 120%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .likebox-no{
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    gap: 4px;
+    height: 44px;
+    background: white;
+    border: 1px solid #252521;
+    border-radius: 100px;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 120%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .next{
+    position: absolute;
+    width: 320px;
+    height: 48px;
+    left: 20px;
+    bottom: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000000;
+    /* DropShadow/CardAndButton */
+    border-radius: 4px;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+
+    text-align: center;
+
+    color: #FFFFFF;
   }

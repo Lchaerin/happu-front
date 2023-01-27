@@ -9,9 +9,7 @@ export default function Home() {
     const [cookie, setCookie] = useCookies(['id']);
   return (
     <div>
-      <head>
-        <title> ???서비스이름??? </title>
-      </head>
+      ???서비스이름???
 
       
   </div>

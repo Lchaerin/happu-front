@@ -126,7 +126,7 @@ a {
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 30px;
     line-height: 120%;
 }
 
@@ -137,4 +137,54 @@ a {
     font-weight: 400;
     font-size: 12px;
     line-height: 120%;
+}
+
+.categoryName
+{
+    padding-left: 24px;
+    font-family: 'Pretendard';
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.button
+{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+.myInfoFSize
+{
+    font-size: 28px;
+}
+
+.myInfoBtn
+{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 24px;
+}
+
+.myInfoMenu
+{
+    font-family: 'Pretendard';
+    font-size: 25px;
+    font-weight: 500;
+    margin-left: 24px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-right: 20px; 
+}
+
+.myAlign
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }

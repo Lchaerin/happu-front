@@ -10,7 +10,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head />
-            <title>??서비스이름??</title>
+            <title>시너지</title>
         <body>
           <Main />
           <NextScript />

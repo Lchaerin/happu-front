@@ -12,6 +12,7 @@ import h2 from '../image/home2.png'
 import * as React from "react";
 import SimpleDialog from '../components/recomendation'
 import TuneIcon from '@mui/icons-material/Tune';
+import sng from '../image/snergy.png'
 
 export default function Home() {
     const [cookie, setCookie] = useCookies(['id']);
@@ -28,7 +29,7 @@ export default function Home() {
 
   return (
     <div>
-      <div style = {{height:"48px", display: "flex", flexWrap: "wrap", alignItems:"center"}}><a className = "categoryName"> Home </a>
+      <div style = {{height:"48px", display: "flex", flexWrap: "wrap", alignItems:"center", marginLeft: "20px", marginBottom: "5px"}}><Image src = {sng} />
       <div style = {{position: "absolute", top: "6px", right: "50px"}}> <Mangnifying /> </div>
       <div style={{position:"absolute", top: "12px", right:"20px"}} onClick={handleClickOpen}><TuneIcon/></div></div>
 

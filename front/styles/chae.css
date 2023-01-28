@@ -304,7 +304,6 @@
     left: 0;
     width: 100vw;
   }
-<<<<<<< HEAD
   .icon{
     margin: 10px;
     width: 60px;
@@ -330,8 +329,7 @@
   .concon{
     width: 60px;
     text-align: center;
-=======
-
+  }
   .subtitle
   {
     font-family: 'Pretendard';
@@ -344,5 +342,4 @@
     font-family: 'Pretendard';
     font-weight: 550;
     font-size: 20px;
->>>>>>> 0efbaa0b69de7440daa157c8b6b2edb7e33eb6ce
   }

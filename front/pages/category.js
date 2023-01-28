@@ -5,6 +5,7 @@ import Link from 'next/link'
 import FixedBottomNavigation from './bottomNavFixed'
 import EmblaCarousel from '../components/sumCarousel'
 import Router, { useRouter } from "next/router";
+import Mangnifying from '../components/magnifying.js'
 import tr from '../image/travel.png'
 import re from '../image/reports.png'
 import ex from '../image/exhibit.png'
@@ -39,6 +40,7 @@ export default function Category() {
   return (
     <div>
       <div style = {{height:"48px",display: "flex",flexWrap: "wrap", alignItems:"center"}}><a className = "categoryName"> 모아보기 </a>
+      <div style = {{position: "absolute", top: "6px", right: "50px"}}> <Mangnifying /> </div>
       <div style={{position:"absolute", top:"12px", right:"20px"}} onClick={handleClickOpen}><TuneIcon/></div></div>
       
       <div style = {{borderStyle: "solid", color: "#CFCFCF", borderWidth: "1px"}}></div>
@@ -248,7 +250,9 @@ export default function Category() {
         <div style = {{
           marginBottom: "10px",
           borderRadius: "1.5rem",
-          overflow: "hidden"}} href = '/demoEnd'>
+          overflow: "hidden",
+          marginTop: "10px"
+          }} href = '/demoEnd'>
             <Image width = "100vw" height = "40vh" src = {cat0} />
           </div>
 

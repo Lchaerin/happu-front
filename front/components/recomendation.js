@@ -368,11 +368,11 @@ SimpleDialog.propTypes = {
         <div className='wouldDialog'>
         <div style={{position:"absolute",right:"15px"}} onClick={handleListItemClick}><ClearIcon/></div>
         <div className='wouldyou'>
-            <b>{cookies.name}</b>님 맞춤으로
+            <b style={{color:"#FF31DE"}}>{cookies.name}</b>님 맞춤으로
             <br/>
              추천 받으시겠어요?
         </div>
-        <div style={{width:"75vw", height:"35vw", backgroundColor:"#D9D9D9", marginTop:"20px", marginBottom:"20px"}}></div>
+        <div style={{marginBottom:"20px"}}></div>
         <div className='wouldno'><div>아니요</div></div>
         <div className='wouldyes'
         onClick={()=>{

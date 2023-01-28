@@ -15,7 +15,18 @@ import TuneIcon from '@mui/icons-material/Tune';
 export default function Home() {
     const [cookie, setCookie] = useCookies(['id']);
     const [open, setOpen] = React.useState(false);
-    
+    React.useEffect(function () {
+        fetch("http://localhost:8080/activity/filter", {
+                    method: "POST",
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: {"login_id":"chaerin"},
+                  }).then(async (res) => {
+                    const data = await res.json()
+                    console.log(data)
+                  })
+      }, []);
   
     const handleClickOpen = () => {
       setOpen(true);
@@ -64,16 +75,11 @@ export default function Home() {
       </div>
 
       <div>
-<<<<<<< HEAD
       <SimpleDialog
           open={open}
           onClose={handleClose}
         />
-        <FixedBottomNavigation/>
-        
-=======
         <FixedBottomNavigation v="home"/>
->>>>>>> 65c816f83cdf2191e1d8a872b839dfb8bf1dba2f
       </div>
     </div>
   )

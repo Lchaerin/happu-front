@@ -3,7 +3,10 @@ import Image from 'next/image'
 import { CookiesProvider,useCookies } from 'react-cookie'
 import FixedBottomNavigation from './bottomNavFixed'
 import Router, { useRouter } from "next/router";
-import React, { useState, useEffect } from "react";
+import Mangnifying from '../components/magnifying.js'
+import * as React from "react";
+import SimpleDialog from '../components/recomendation'
+import TuneIcon from '@mui/icons-material/Tune';
 import myP from '../image/myPhoto.png'
 import he from '../image/heart.png'
 import co from '../image/coupon.png'
@@ -14,10 +17,21 @@ import arw from '../image/myinfoArrow.png'
 export default function Home() {
     const [cookie, setCookie] = useCookies(['id']);
 
+    const [open, setOpen] = React.useState(false);
+    
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+  
+    const handleClose = (value) => {
+      setOpen(false);
+    };
+
     return (
         <div>
             <div style = {{paddingTop: "9px", paddingBottom: "9px"}}><a className = "categoryName"> 내 정보 </a></div>
-            
+            <div style = {{position: "absolute", top: "6px", right: "50px"}}> <Mangnifying /> </div>
+            <div style={{position:"absolute", top: "12px", right:"20px"}} onClick={handleClickOpen}><TuneIcon/></div>
             <div style = {{borderStyle: "solid", color: "#CFCFCF", borderWidth: "1px"}}></div>
 
             <div style = {{
@@ -138,23 +152,26 @@ export default function Home() {
             <div style = {{borderStyle: "solid", color: "#EBEBEB", borderWidth: "7px", marginTop: "20px"}}></div>
 
             <div className = "myAlign">
-                <a className = "myInfoMenu" href = './demoEnd'>공지사항 <Image src = {arw} /> </a>
+                <a className = "myInfoMenu" href = './demoEnd'>공지사항 <span style = {{position: "absolute", right: "20px"}}><Image src = {arw} /></span> </a>
                 <div style = {{borderStyle: "solid", color: "#CFCFCF", borderWidth: "1px"}}></div>
 
-                <a className = "myInfoMenu" href = './demoEnd'>이벤트 <Image src = {arw} /> </a>
+                <a className = "myInfoMenu" href = './demoEnd'>이벤트 <span style = {{position: "absolute", right: "20px"}}><Image src = {arw} /></span> </a>
                 <div style = {{borderStyle: "solid", color: "#CFCFCF", borderWidth: "1px"}}></div>
 
-                <a className = "myInfoMenu" href = './demoEnd'>고객센터 <Image src = {arw} /> </a>
+                <a className = "myInfoMenu" href = './demoEnd'>고객센터 <span style = {{position: "absolute", right: "20px"}}><Image src = {arw} /></span> </a>
                 <div style = {{borderStyle: "solid", color: "#CFCFCF", borderWidth: "1px"}}></div>
 
-                <a className = "myInfoMenu" href = './demoEnd'>설정 <Image src = {arw} /> </a>
+                <a className = "myInfoMenu" href = './demoEnd'>설정 <span style = {{position: "absolute", right: "20px"}}><Image src = {arw} /></span> </a>
                 <div style = {{borderStyle: "solid", color: "#CFCFCF", borderWidth: "1px"}}></div>
 
-                <a className = "myInfoMenu" href = './demoEnd'>약관 및 정책 <Image src = {arw} /> </a>
+                <a className = "myInfoMenu" href = './demoEnd'>약관 및 정책 <span style = {{position: "absolute", right: "20px"}}><Image src = {arw} /></span> </a>
                 <div style = {{borderStyle: "solid", color: "#CFCFCF", borderWidth: "1px"}}></div>
             </div>
 
             <div>
+                <SimpleDialog
+                    open={open}
+                    onClose={handleClose} />
                 <FixedBottomNavigation v="myInfo"/>
             </div>
         </div>

@@ -5,6 +5,7 @@ import { CookiesProvider,useCookies } from 'react-cookie'
 import Link from 'next/link'
 import FixedBottomNavigation from './bottomNavFixed'
 import Router, { useRouter } from "next/router";
+import Mangnifying from '../components/magnifying.js'
 import h0 from '../image/home0.png'
 import h1 from '../image/home1.png'
 import h2 from '../image/home2.png'
@@ -27,8 +28,9 @@ export default function Home() {
 
   return (
     <div>
-      <div style = {{height:"48px",display: "flex",flexWrap: "wrap", alignItems:"center"}}><a className = "categoryName"> Home </a>
-      <div style={{position:"absolute", top:"12px", right:"20px"}} onClick={handleClickOpen}><TuneIcon/></div></div>
+      <div style = {{height:"48px", display: "flex", flexWrap: "wrap", alignItems:"center"}}><a className = "categoryName"> Home </a>
+      <div style = {{position: "absolute", top: "6px", right: "50px"}}> <Mangnifying /> </div>
+      <div style={{position:"absolute", top: "12px", right:"20px"}} onClick={handleClickOpen}><TuneIcon/></div></div>
 
       <div style = {{borderStyle: "solid", color: "#CFCFCF", borderWidth: "1px"}}></div>
 
@@ -39,42 +41,41 @@ export default function Home() {
         flexDirection: "column"
       }}>
         <div style = {{
-          marginTop: "15px",
+          marginTop: "10px",
           borderRadius: "1.5rem",
           overflow: "hidden"
-          }} onClick={() => Router.push("/okinawa")} >
-            <Image width = "50vw" height = "50vh" src = {h0} />
+        }} onClick={() => Router.push("/okinawa")} >
+            <Image width = "20vw" height = "30vh" src = {h0} />
         </div>
 
         <div style = {{
-          marginTop: "15px",
+          marginTop: "10px",
           borderRadius: "1.5rem",
-          overflow: "hidden"
+          overflow: "hidden",
+          marginLeft: "20px",
+          marginRight: "20px"
           }} onClick={() => Router.push("/demoEnd")} >
-            <Image width = "50vw" height = "50vh" src = {h1} />
+            <Image width = "20vw" height = "30vh" src = {h1} />
         </div>
 
         <div style = {{
-          marginTop: "15px",
+          marginTop: "10px",
           borderRadius: "1.5rem",
-          overflow: "hidden"
+          overflow: "hidden",
+          marginLeft: "20px",
+          marginRight: "20px"
           }} onClick={() => Router.push("/demoEnd")} >
-            <Image width = "50vw" height = "50vh" src = {h2} />
+            <Image width = "20vw" height = "30vh" src = {h2} />
         </div>
       </div>
 
       <div>
-<<<<<<< HEAD
-      <SimpleDialog
-          open={open}
-          onClose={handleClose}
-        />
-        <FixedBottomNavigation/>
+        <SimpleDialog
+            open={open}
+            onClose={handleClose} />
         
-=======
         <FixedBottomNavigation v="home"/>
->>>>>>> 65c816f83cdf2191e1d8a872b839dfb8bf1dba2f
       </div>
     </div>
-  )
+  );
 }

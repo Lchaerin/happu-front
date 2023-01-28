@@ -21,7 +21,7 @@
     padding-top: 15px;
   }
   .line{
-    width: 360px;
+    width: 100vw;
     height: 1px;
     left: 0px;
     top: 572px;
@@ -304,7 +304,32 @@
     left: 0;
     width: 100vw;
   }
-
+  .icon{
+    margin: 10px;
+    width: 60px;
+  }
+  .small-dis{
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    text-align: center;
+    display:table-cell;
+    vertical-align:middle;
+    width: 60px;
+  }
+  .icon-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center; 
+    width: 100vw;
+  }
+  .concon{
+    width: 60px;
+    text-align: center;
+  }
   .subtitle
   {
     font-family: 'Pretendard';

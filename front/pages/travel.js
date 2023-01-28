@@ -56,24 +56,24 @@ export default function Home() {
                 marginRight: "24px"
             }}>                
                 <div style = {{
-                    marginTop: "15px",
+                    marginTop: "35px",
                     borderRadius: "1.5rem",
                     overflow: "hidden"}}>
-                        <Image width = "100vw" height = "40vh" src = {t0} />
+                        <Image width = "90vw" height = "50vh" src = {t0} />
                 </div>
 
                 <div style = {{
                     marginTop: "15px",
                     borderRadius: "1.5rem",
                     overflow: "hidden"}}>
-                        <Image width = "100vw" height = "40vh" src = {t1} />
+                        <Image width = "90vw" height = "50vh" src = {t1} />
                 </div>
 
                 <div style = {{
                     marginTop: "15px",
                     borderRadius: "1.5rem",
                     overflow: "hidden"}}>
-                        <Image width = "100vw" height = "40vh" src = {t2} />
+                        <Image width = "90vw" height = "50vh" src = {t2} />
                 </div>
             </div>
 

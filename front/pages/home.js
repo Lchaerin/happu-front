@@ -41,7 +41,7 @@ export default function Home() {
         flexDirection: "column"
       }}>
         <div style = {{
-          marginTop: "10px",
+          marginTop: "20px",
           borderRadius: "1.5rem",
           overflow: "hidden"
         }} onClick={() => Router.push("/okinawa")} >

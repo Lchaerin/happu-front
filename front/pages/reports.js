@@ -57,11 +57,11 @@ export default function Home() {
                 marginRight: "24px"
             }}>                
                 <div style = {{
-                    marginTop: "15px",
+                    marginTop: "35px",
                     borderRadius: "1.5rem",
                     overflow: "hidden"
                 }} onClick={() => Router.push("/demoEnd")} >
-                        <Image width = "100vw" height = "40vh" src = {r0} />
+                        <Image width = "90vw" height = "50vh" src = {r0} />
                 </div>
 
                 <div style = {{
@@ -69,7 +69,7 @@ export default function Home() {
                     borderRadius: "1.5rem",
                     overflow: "hidden"
                 }} onClick={() => Router.push("/demoEnd")} >
-                        <Image width = "100vw" height = "40vh" src = {r1} />
+                        <Image width = "90vw" height = "50vh" src = {r1} />
                 </div>
 
                 <div style = {{
@@ -77,7 +77,7 @@ export default function Home() {
                     borderRadius: "1.5rem",
                     overflow: "hidden"
                 }} onClick={() => Router.push("/demoEnd")} >
-                        <Image width = "100vw" height = "40vh" src = {r2} />
+                        <Image width = "90vw" height = "50vh" src = {r2} />
                 </div>
             </div>
 

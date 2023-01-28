@@ -250,7 +250,9 @@ export default function Category() {
         <div style = {{
           marginBottom: "10px",
           borderRadius: "1.5rem",
-          overflow: "hidden"}} href = '/demoEnd'>
+          overflow: "hidden",
+          marginTop: "10px"
+          }} href = '/demoEnd'>
             <Image width = "100vw" height = "40vh" src = {cat0} />
           </div>
 
